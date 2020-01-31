@@ -1,5 +1,5 @@
 {
-  "version": 1926,
+  "version": 1942,
   "tenantid": "RVCC",
   "mobappid": 599,
   "appName": "myRVCC",
@@ -63,7 +63,7 @@
         {
           "pageid": "Athletics115",
           "pageTemplate": "<div><\/div>",
-          "pageprocessor": "function pageprocessorAthletics115(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {if (window.device) {$.blockUI();}var iabRef = window.open(pagedef.url, \"_blank\", \"location=no,hidden=no,enableViewportScale=yes,clearcache=yes\");var hideBlockUi = function() {$.unblockUI();iabRef.show();        };var iabClose = function(data) {$.unblockUI();iabRef.removeEventListener(\"exit\", iabClose);window.location.href = \"index.html#home\";};iabRef.addEventListener(\"exit\", iabClose);var loadStop = function(data) {hideBlockUi();iabRef.removeEventListener(\"loadstop\", loadStop);};iabRef.addEventListener(\"loadstop\", loadStop);}",
+          "pageprocessor": "function pageprocessorAthletics115(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  if (window.device) {\r\n    $.blockUI();\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_system\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.location.href = \"index.html#home\";\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n  var loadError = function(data) {\r\n    $.blockUI();\r\n    handleDocumentWithURL(\r\n      function() {\r\n\r\n        $.unblockUI();\r\n        window.location.href = \"index.html#home\";\r\n      },\r\n      function(error) {\r\n\r\n        if (error) {\r\n          navigator.notification.alert('You must have a PDF reader app to view Details');\r\n          $.unblockUI();\r\n        }\r\n      },\r\n      pagedef.url\r\n    );\r\n  };\r\n\r\n  iabRef.addEventListener('loaderror', loadError);\r\n\r\n\r\n\r\n\r\n\r\n}",
           "url": "http://www.rvcctherecord.com/"
         }
       ]
@@ -134,7 +134,7 @@
         {
           "pageid": "PaperCut",
           "pageTemplate": "<div><\/div>",
-          "pageprocessor": "function pageprocessorPaperCut(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {if (window.device) {$.blockUI();}var iabRef = window.open(pagedef.url, \"_blank\", \"location=no,hidden=no,enableViewportScale=yes,clearcache=yes\");var hideBlockUi = function() {$.unblockUI();iabRef.show();        };var iabClose = function(data) {$.unblockUI();iabRef.removeEventListener(\"exit\", iabClose);window.location.href = \"index.html#home\";};iabRef.addEventListener(\"exit\", iabClose);var loadStop = function(data) {hideBlockUi();iabRef.removeEventListener(\"loadstop\", loadStop);};iabRef.addEventListener(\"loadstop\", loadStop);}",
+          "pageprocessor": "function pageprocessorPaperCut(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  if (window.device) {\r\n    $.blockUI();\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_system\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.location.href = \"index.html#home\";\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n  var loadError = function(data) {\r\n    $.blockUI();\r\n    handleDocumentWithURL(\r\n      function() {\r\n\r\n        $.unblockUI();\r\n        window.location.href = \"index.html#home\";\r\n      },\r\n      function(error) {\r\n\r\n        if (error) {\r\n          navigator.notification.alert('You must have a PDF reader app to view Details');\r\n          $.unblockUI();\r\n        }\r\n      },\r\n      pagedef.url\r\n    );\r\n  };\r\n\r\n  iabRef.addEventListener('loaderror', loadError);\r\n\r\n\r\n\r\n\r\n\r\n}",
           "url": "http://printsrv:9191/user"
         }
       ]
@@ -163,6 +163,75 @@
       ]
     },
     {
+      "id": 157518,
+      "name": "EmployeeDashboard",
+      "displayname": "Employee Dashboard",
+      "logo": "RVCC/EmployeeDashboard.png",
+      "logourl": "RVCC/EmployeeDashboard.png",
+      "description": "Employee Dashboard",
+      "appFeatureType": "Services",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": true,
+      "pages": 
+      [
+        {
+          "pageid": "EmployeeDashboard",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorEmployeeDashboard(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  if (window.device) {\r\n    $.blockUI();\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_system\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.location.href = \"index.html#home\";\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n  var loadError = function(data) {\r\n    $.blockUI();\r\n    handleDocumentWithURL(\r\n      function() {\r\n\r\n        $.unblockUI();\r\n        window.location.href = \"index.html#home\";\r\n      },\r\n      function(error) {\r\n\r\n        if (error) {\r\n          navigator.notification.alert('You must have a PDF reader app to view Details');\r\n          $.unblockUI();\r\n        }\r\n      },\r\n      pagedef.url\r\n    );\r\n  };\r\n\r\n  iabRef.addEventListener('loaderror', loadError);\r\n\r\n\r\n\r\n\r\n\r\n}",
+          "url": "https://rvccmcpselfserv01.raritanval.edu:8001/EmployeeSelfService/ssb/hrDashboard#/hrDashboard"
+        }
+      ]
+    },
+    {
+      "id": 157524,
+      "name": "PasswordReset4",
+      "displayname": "Password Reset",
+      "logo": "RVCC/PasswordReset4.png",
+      "logourl": "RVCC/PasswordReset4.png",
+      "description": "Password Reset",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": true,
+      "pages": 
+      [
+        {
+          "pageid": "PasswordReset4",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorPasswordReset4(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  if (window.device) {\r\n    $.blockUI();\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_system\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.location.href = \"index.html#home\";\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n  var loadError = function(data) {\r\n    $.blockUI();\r\n    handleDocumentWithURL(\r\n      function() {\r\n\r\n        $.unblockUI();\r\n        window.location.href = \"index.html#home\";\r\n      },\r\n      function(error) {\r\n\r\n        if (error) {\r\n          navigator.notification.alert('You must have a PDF reader app to view Details');\r\n          $.unblockUI();\r\n        }\r\n      },\r\n      pagedef.url\r\n    );\r\n  };\r\n\r\n  iabRef.addEventListener('loaderror', loadError);\r\n\r\n\r\n\r\n\r\n\r\n}",
+          "url": "https://passwordreset.raritanval.edu/accounts/Reset"
+        }
+      ]
+    },
+    {
+      "id": 157899,
+      "name": "LionsDen",
+      "displayname": "Lion's Den",
+      "logo": "RVCC/LionsDen.png",
+      "logourl": "RVCC/LionsDen.png",
+      "description": "Lion's Den",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": true,
+      "pages": 
+      [
+        {
+          "pageid": "LionsDen",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorLionsDen(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  if (window.device) {\r\n    $.blockUI();\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_system\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.location.href = \"index.html#home\";\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n  var loadError = function(data) {\r\n    $.blockUI();\r\n    handleDocumentWithURL(\r\n      function() {\r\n\r\n        $.unblockUI();\r\n        window.location.href = \"index.html#home\";\r\n      },\r\n      function(error) {\r\n\r\n        if (error) {\r\n          navigator.notification.alert('You must have a PDF reader app to view Details');\r\n          $.unblockUI();\r\n        }\r\n      },\r\n      pagedef.url\r\n    );\r\n  };\r\n\r\n  iabRef.addEventListener('loaderror', loadError);\r\n\r\n\r\n\r\n\r\n\r\n}",
+          "url": "https://lionsden.raritanval.edu"
+        }
+      ]
+    },
+    {
       "id": 14692,
       "name": "RVCChome",
       "displayname": "RVCC home",
@@ -180,7 +249,7 @@
         {
           "pageid": "RVCChome",
           "pageTemplate": "<div><\/div>",
-          "pageprocessor": "function pageprocessorRVCChome(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {if (window.device) {$.blockUI();}var iabRef = window.open(pagedef.url, \"_blank\", \"location=yes,hidden=no,enableViewportScale=yes,clearcache=yes\");var hideBlockUi = function() {$.unblockUI();iabRef.show();        };var iabClose = function(data) {$.unblockUI();iabRef.removeEventListener(\"exit\", iabClose);window.location.href = \"index.html#home\";};iabRef.addEventListener(\"exit\", iabClose);var loadStop = function(data) {hideBlockUi();iabRef.removeEventListener(\"loadstop\", loadStop);};iabRef.addEventListener(\"loadstop\", loadStop);}",
+          "pageprocessor": "function pageprocessorRVCChome(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  if (window.device) {\r\n    $.blockUI();\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_system\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.location.href = \"index.html#home\";\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n  var loadError = function(data) {\r\n    $.blockUI();\r\n    handleDocumentWithURL(\r\n      function() {\r\n\r\n        $.unblockUI();\r\n        window.location.href = \"index.html#home\";\r\n      },\r\n      function(error) {\r\n\r\n        if (error) {\r\n          navigator.notification.alert('You must have a PDF reader app to view Details');\r\n          $.unblockUI();\r\n        }\r\n      },\r\n      pagedef.url\r\n    );\r\n  };\r\n\r\n  iabRef.addEventListener('loaderror', loadError);\r\n\r\n\r\n\r\n\r\n\r\n}",
           "url": "http://www.raritanval.edu"
         }
       ]
@@ -540,7 +609,7 @@
       "showInDock": false,
       "showInHome": false,
       "networkrequired": true,
-      "analytics": true,
+      "analytics": false,
       "pages": 
       [
         {
@@ -670,7 +739,7 @@
       "showInDock": false,
       "showInHome": true,
       "networkrequired": true,
-      "analytics": true,
+      "analytics": false,
       "pages": 
       [
         {
@@ -837,14 +906,14 @@
       "showInDock": false,
       "showInHome": true,
       "networkrequired": true,
-      "analytics": true,
+      "analytics": false,
       "pages": 
       [
         {
           "pageid": "Twitter",
           "pageTemplate": "<div><\/div>",
           "url": "https://twitter.com/raritanvalleycc",
-          "pageprocessor": "function pageprocessorTwitter(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n   if(window.device) {\r\n      $.blockUI();\r\n   }\r\n    var iabRef = window.open(pagedef.url, \"_blank\",\"location=yes,enableViewportScale=yes\");\r\n    var hideBlockUi = function() {\r\n        iabRef.show();\r\n        $.unblockUI();\r\n    };\r\n\r\n    var iabClose = function(data) {\r\n        window.location.href = \"index.html#home\";\r\n$.unblockUI();\r\n    };\r\n    iabRef.addEventListener(\"exit\", iabClose);\r\n\r\n    var loadStop = function(data) {\r\n        hideBlockUi();\r\n\r\n    };\r\n    iabRef.addEventListener(\"loadstop\", loadStop);\r\n}"
+          "pageprocessor": "function pageprocessorTwitter(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  if (window.device) {\r\n    $.blockUI();\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_system\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.location.href = \"index.html#home\";\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n  var loadError = function(data) {\r\n    $.blockUI();\r\n    handleDocumentWithURL(\r\n      function() {\r\n\r\n        $.unblockUI();\r\n        window.location.href = \"index.html#home\";\r\n      },\r\n      function(error) {\r\n\r\n        if (error) {\r\n          navigator.notification.alert('You must have a PDF reader app to view Details');\r\n          $.unblockUI();\r\n        }\r\n      },\r\n      pagedef.url\r\n    );\r\n  };\r\n\r\n  iabRef.addEventListener('loaderror', loadError);\r\n\r\n\r\n\r\n\r\n\r\n}"
         }
       ]
     },
@@ -860,14 +929,14 @@
       "showInDock": false,
       "showInHome": true,
       "networkrequired": true,
-      "analytics": true,
+      "analytics": false,
       "pages": 
       [
         {
           "pageid": "Facebook",
           "pageTemplate": "<div><\/div>",
           "url": "https://www.facebook.com/pages/Raritan-Valley-Community-College/59282399184",
-          "pageprocessor": "function pageprocessorFacebook(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n   if(window.device) {\r\n      $.blockUI();\r\n   }\r\n\r\n    var iabRef = window.open(pagedef.url, \"_blank\", \"location=yes,enableViewportScale=yes\");\r\n    var hideBlockUi = function() {\r\n        iabRef.show();\r\n        $.unblockUI();\r\n    };\r\n\r\n    var iabClose = function(data) {\r\n        window.location.href = \"index.html#home\";\r\n$.unblockUI();\r\n    };\r\n    iabRef.addEventListener(\"exit\", iabClose);\r\n  \r\n    var loadStop = function(data) {\r\n        hideBlockUi();\r\n\r\n    };\r\n    iabRef.addEventListener(\"loadstop\", loadStop);\r\n\r\n}"
+          "pageprocessor": "function pageprocessorFacebook(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  if (window.device) {\r\n    $.blockUI();\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_system\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.location.href = \"index.html#home\";\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n  var loadError = function(data) {\r\n    $.blockUI();\r\n    handleDocumentWithURL(\r\n      function() {\r\n\r\n        $.unblockUI();\r\n        window.location.href = \"index.html#home\";\r\n      },\r\n      function(error) {\r\n\r\n        if (error) {\r\n          navigator.notification.alert('You must have a PDF reader app to view Details');\r\n          $.unblockUI();\r\n        }\r\n      },\r\n      pagedef.url\r\n    );\r\n  };\r\n\r\n  iabRef.addEventListener('loaderror', loadError);\r\n\r\n\r\n\r\n\r\n\r\n}"
         }
       ]
     }
